@@ -1,0 +1,1 @@
+import BackGround from './js/runtime/background.js'
