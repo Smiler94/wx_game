@@ -12,7 +12,7 @@ export default class BackGround extends Sprite {
 		super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT) // 调用父类构造函数
 
 		this.render(ctx) // 渲染背景
-		this.top = 100
+		this.top = 0
 	}
 
 	render(ctx) { // 渲染
