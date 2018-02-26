@@ -14,8 +14,8 @@ export default class Bullet extends Sprite {
 	}
 
 	init(x, y, speed) { // 初始化子弹的坐标与速度
-		this.x = x
-		this.y = y
+		this.x = x - this.width/2
+		this.y = y - this.height/2
 
 		this[__.speed] = speed
 		this.visble = true

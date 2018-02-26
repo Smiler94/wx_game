@@ -1,8 +1,12 @@
 import Sprite from '../base/sprite.js'
+import Bullet from '../player/bullet.js'
 
 const IMG_SRC = 'images/hero.png'
 const PLAYER_WIDTH = 80
 const PLAYER_HEIGHT = 80
+
+const BULLET_SPEED = 10
+
 const screenWidth = window.innerWidth
 const screenHeight = window.innerHeight
 
@@ -14,6 +18,7 @@ export default class Player extends Sprite{
 		this.y = screenHeight - this.height - 30 // 初始纵坐标
  
 		this.initEvent() // 初始化监听行为
+		this.bullets = []
 	}
 
 	isTouchOnAir(x, y) { // 判断是否触碰到机体上,触碰点在机体所在的方形里
@@ -72,5 +77,12 @@ export default class Player extends Sprite{
 
 			this.touched = false;
 		}).bind(this))
+	}
+
+	shoot() {
+		let bullet = new Bullet() // 生成新的子弹
+
+		bullet.init(this.x + this.width/2, this.y, BULLET_SPEED)
+		this.bullets.push(bullet)
 	}
 }
