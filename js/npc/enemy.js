@@ -13,7 +13,7 @@ function rnd(start, end) { // 随机生成敌机的横坐标
 }
 
 export default class Enemy extends Animation{
-	constructor(tx){
+	constructor(){
 		super(ENEMY_IMG_SRC, ENEMY_WIDTH, ENEMY_HEIGHT)
 
 		this.initExplosionAnimation() // 初始化爆炸动画
